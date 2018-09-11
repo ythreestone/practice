@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    char buf[500];
+    FILE*fp;
+    //之前一直读取失败是因为路径里的\在这里需要加转义字符\才能正常找到路径//
+    fp = fopen("D:\\codeblocks\\MinGW\\include\\stdio.h","r");
+    while(fgets(buf, 500, fp)!=0)
+    {
+        printf("%s\n",buf);
+    }
+}
+
